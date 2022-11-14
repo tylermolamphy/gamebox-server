@@ -15,7 +15,13 @@ app.config['SECRET_KEY'] = 'c41FRlse6dhmD2zr52kdfTDAgtNejXjKDoQyCUiHXo7YeR'
  
 @app.route('/')
 def index():
-    return render_template('main.html')
+    now = datetime.datetime.now()
+    timeString = now.strftime("%Y-%m-%d %H:%M")
+    templateData = {
+       'title' : 'HELLO!',
+       'time': timeString
+       }
+    return render_template('main.html', **templateData)
  
 @app.route('/',  methods=("POST", "GET"))
 def uploadFile():
@@ -33,7 +39,7 @@ def uploadFile():
         # Finally, return to user
         return render_template('success.html')
  
-@app.route('/show_image')
+@app.route('/reset_image')
 def displayImage():
     # Retrieving uploaded file path from session
     img_file_path = session.get('uploaded_img_file_path', None)
