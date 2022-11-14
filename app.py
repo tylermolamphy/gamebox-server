@@ -40,11 +40,11 @@ def uploadFile():
         return render_template('success.html')
  
 @app.route('/reset_image')
-def displayImage():
+def resetImage():
     # Retrieving uploaded file path from session
-    img_file_path = session.get('uploaded_img_file_path', None)
+    subprocess.run(['/usr/bin/bash /opt/display_image.sh /opt/landing.jpg'], shell=True)
     # Display image in Flask application web page
-    return render_template('show_image.html', user_image = img_file_path)
+    return render_template('success.html')
  
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
