@@ -28,9 +28,14 @@ if [ "$_IP" ]; then
   printf "I have come online with local IP address  %s\n" "$_IP"
 fi
 sleep 5
+echo Updating to latest gamebox-server commit
+pushd /root/gamebox-server
+git pull --force
+popd
 apt update
 apt upgrade -y
-apt install fbi -y
+apt install fbi python-pip -y
+pip install flask
 sleep 5
 /usr/bin/fbi -a --noverbose -T 1 /home/t/image.jpg
 exit 0
