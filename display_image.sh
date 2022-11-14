@@ -1,5 +1,7 @@
 #!/bin/bash
 /usr/bin/clear
+upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
+upMins=$((${upSeconds} / 60))
 if [ $# -eq 0 ]
   then
     /usr/bin/sudo /usr/bin/killall /usr/bin/fbi
@@ -7,6 +9,9 @@ if [ $# -eq 0 ]
     exit 0
 fi
 /usr/bin/sudo /usr/bin/killall /usr/bin/fbi
-/usr/bin/sleep 60
+if [ "${upMins}" -lt "1" ]
+then
+    sleep 60
+fi
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 $1
 exit 0
