@@ -35,7 +35,7 @@ def uploadFile():
         # Upload file to database (defined uploaded folder in static path)
         uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
         # And displaying image
-        subprocess.run(['bash /opt/display_image.sh', 'uploaded_img_file_path'], shell=True)
+        subprocess.run(['bash /opt/display_image.sh', (os.path.join('/opt/uploaded_images/', img_filename))], shell=True)
         # Finally, return to user
         return render_template('success.html')
  
