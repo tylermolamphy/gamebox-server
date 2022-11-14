@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "[   OK   ]    Bootstrapping GAMEB0X"
-sleep 30
+sleep 20
 clear
 echo ░░░░░░░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗░████████╗░█████╗░░░░░░░
 echo ░░░░░░░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝░╚══██╔══╝██╔══██╗░░░░░░
@@ -22,22 +22,5 @@ echo █████╗█████╗█████╗╚██╗░██
 echo ╚════╝╚════╝╚════╝░╚████╔╝░██╔══╝░░██╔══██╗░╚═══██╗██║██║░░██║██║╚████║╚═╝██║░░╚════╝╚════╝╚════╝
 echo ░░░░░░░░░░░░░░░░░░░░╚██╔╝░░███████╗██║░░██║██████╔╝██║╚█████╔╝██║░╚███║███████╗░░░░░░░░░░░░░░░░░░
 echo ░░░░░░░░░░░░░░░░░░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝░░░░░░░░░░░░░░░░░░
-sleep 3
-_IP=$(hostname -I) || true
-if [ "$_IP" ]; then
-  printf "I have come online with local IP address  %s\n" "$_IP"
-fi
-sleep 1
-echo Updating to latest gamebox-server commit...
-sleep 1
-pushd /opt/
-systemctl stop flask
-sleep 1
-rm -rfv gamebox-server
-git clone git@github.com:tylermolamphy/gamebox-server.git
-chown -R flask:www-data /opt/gamebox-server
-systemctl restart flask
-popd
-echo Ready to rock. Resume system boot
 /opt/gamebox-server/display_image.sh &disown
 exit 0
