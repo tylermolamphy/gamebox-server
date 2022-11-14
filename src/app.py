@@ -17,7 +17,7 @@ def hello():
 
 @app.route("/showimage/")
 def omx():
-   subprocess.call(['./omxlive.sh'], shell=True)
+   subprocess.call(['./fbi.sh'], shell=True)
 
 #@app.route("/omxstop/")
 #def omxstop():
