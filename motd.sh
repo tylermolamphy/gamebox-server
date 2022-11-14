@@ -32,5 +32,5 @@ echo Updating to latest gamebox-server commit
 pushd /root/gamebox-server
 git pull --force
 popd
-echo Ready to rock...
+echo Ready to rock. Resume system boot
 exit 0
