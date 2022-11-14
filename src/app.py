@@ -24,9 +24,9 @@ def uploadFile():
         # Extracting uploaded data file name
         img_filename = secure_filename(uploaded_img.filename)
         # Upload file to database (defined uploaded folder in static path)
-        uploaded_img.save(os.path.join(app.config['UPLOAD_FOLDER'], img_filename))
+        uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
         # Storing uploaded file path in flask session
-        session['uploaded_img_file_path'] = os.path.join(app.config['UPLOAD_FOLDER'], img_filename)
+        session['uploaded_img_file_path'] = (os.path.join('/opt/uploaded_images/', img_filename))
  
         return render_template('success.html')
  
