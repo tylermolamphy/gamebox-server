@@ -29,8 +29,10 @@ if [ "$_IP" ]; then
 fi
 sleep 1
 echo Updating to latest gamebox-server commit
-pushd /root/gamebox-server
+pushd /opt/gamebox-server
 git pull --force
 popd
 echo Ready to rock. Resume system boot
+sleep 3
+# /opt/display_image.sh /opt/landing.jpg
 exit 0
