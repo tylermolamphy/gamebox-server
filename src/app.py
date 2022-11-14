@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, session
 import os
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/opt/uploaded_images/'
+UPLOAD_FOLDER = os.path.join('staticFiles', 'uploads')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, template_folder='templateFiles', static_folder='staticFiles')
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = '/opt/uploaded_images/'
  
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
