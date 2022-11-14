@@ -37,7 +37,7 @@ def uploadFile():
         # Storing uploaded file path in flask session
         session['uploaded_img_file_path'] = (os.path.join('/opt/uploaded_images/', img_filename))
         # And displaying image
-        subprocess.run(['./display_image.sh', (os.path.join('/opt/uploaded_images/', img_filename))], shell=True)
+        subprocess.run(['/opt/display_image.sh', (os.path.join('/opt/uploaded_images/', img_filename))], shell=True)
         # Finally, return to user
         return render_template('success.html')
  
