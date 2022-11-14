@@ -8,13 +8,13 @@
     <h2>The date and time on the server is: {{ time }}</h2>
  
     <form method="POST" enctype="multipart/form-data" action="/">
-        <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
+        <input type="file" id="myFile" name="uploaded-file" accept=".png">
         <input type="submit" value="Submit">
     </form>
   <br>
-  <p style="color:blue;">Choose image file to upload</p>
-  <form action="/show_data" target="_blank">
-        <input type="submit" value="Reset Image" />
+  <p style="color:green;">File uploaded successfully</p>
+  <form action="/show_image" target="_blank">
+        <input type="submit" value="Display Image" />
     </form>
   </body>
 </html>
