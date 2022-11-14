@@ -1,20 +1,11 @@
 from flask import Flask, render_template, request, session
 import os
 from werkzeug.utils import secure_filename
- 
-#*** Backend operation
- 
-# WSGI Application
-# Defining upload folder path
-UPLOAD_FOLDER = os.path.join('staticFiles', 'uploads')
-# # Define allowed files
+
+UPLOAD_FOLDER = '/opt/uploaded_images/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
- 
-# Provide template folder name
-# The default folder name should be "templates" else need to mention custom folder name for template path
-# The default folder name for static files should be "static" else need to mention custom folder for static path
+
 app = Flask(__name__, template_folder='templateFiles', static_folder='staticFiles')
-# Configure upload folder for Flask application
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
  
 app = Flask(__name__)
