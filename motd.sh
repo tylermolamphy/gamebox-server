@@ -28,11 +28,11 @@ if [ "$_IP" ]; then
   printf "I have come online with local IP address  %s\n" "$_IP"
 fi
 sleep 1
-echo Updating to latest gamebox-server commit
+echo Updating to latest gamebox-server commit...
+sleep 1
 pushd /opt/gamebox-server
 git pull --force
 popd
 echo Ready to rock. Resume system boot
-sleep 3
-# /opt/display_image.sh /opt/landing.jpg
+/opt/display_image.sh /opt/landing.jpg
 exit 0

@@ -7,6 +7,6 @@ if [ $# -eq 0 ]
     exit 0
 fi
 /usr/bin/sudo /usr/bin/killall /usr/bin/fbi
-/usr/bin/sleep 1
+/usr/bin/sleep 10
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 $1
 exit 0
