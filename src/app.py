@@ -16,7 +16,7 @@ def hello():
    return render_template('main.html', **templateData)
 
 @app.route("/showimage/")
-def fbi():
+def showimage():
    subprocess.call(['./fbi.sh'], shell=True)
    return showimage
 
