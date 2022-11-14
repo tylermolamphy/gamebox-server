@@ -34,5 +34,5 @@ pushd /opt/gamebox-server
 git pull --force
 popd
 echo Ready to rock. Resume system boot
-/opt/display_image.sh /opt/landing.jpg
+/opt/display_image.sh /opt/landing.jpg &disown
 exit 0
