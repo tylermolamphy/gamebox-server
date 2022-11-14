@@ -30,9 +30,14 @@ fi
 sleep 1
 echo Updating to latest gamebox-server commit...
 sleep 1
-pushd /opt/gamebox-server
-git pull --force
+pushd /opt/
+systemctl stop flask
+sleep 1
+rm -rfv gamebox-server
+git clone git@github.com:tylermolamphy/gamebox-server.git
+chown -R flask:www-data /opt/gamebox-server
+systemctl restart flask
 popd
 echo Ready to rock. Resume system boot
-/opt/display_image.sh /opt/landing.jpg &disown
+/opt/gamebox-server/display_image.sh &disown
 exit 0

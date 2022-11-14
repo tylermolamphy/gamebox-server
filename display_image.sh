@@ -11,7 +11,7 @@ fi
 /usr/bin/sudo /usr/bin/killall /usr/bin/fbi
 if [ "${upMins}" -lt "1" ]
 then
-    sleep 60
+    sleep 30
 fi
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 $1
 exit 0
