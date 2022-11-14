@@ -28,7 +28,7 @@ def uploadFile():
         # Storing uploaded file path in flask session
         session['uploaded_img_file_path'] = (os.path.join('/opt/uploaded_images/', img_filename))
         # And displaying image
-        uploaded_img.run(['./fbi.sh', (os.path.join('/opt/uploaded_images/', img_filename))], shell=True)
+        subprocess.run(['./fbi.sh', (os.path.join('/opt/uploaded_images/', img_filename))], shell=True)
         # Finally, return to user
         return render_template('success.html')
  
