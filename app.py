@@ -46,5 +46,12 @@ def resetImage():
     # Display image in Flask application web page
     return render_template('success.html')
  
+@app.route('/power_down')
+def powerDown():
+    # Retrieving uploaded file path from session
+    subprocess.run(['/usr/bin/bash poweroff'], shell=True)
+    # Display image in Flask application web page
+    return render_template('success.html')
+ 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
