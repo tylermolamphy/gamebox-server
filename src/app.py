@@ -16,13 +16,9 @@ def hello():
    return render_template('main.html', **templateData)
 
 @app.route("/showimage/")
-def omx():
+def fbi():
    subprocess.call(['./fbi.sh'], shell=True)
-
-#@app.route("/omxstop/")
-#def omxstop():
-#   subprocess.call(['./omxstop.sh'], shell=True)
-
+   return showimage
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=80, debug=True)
