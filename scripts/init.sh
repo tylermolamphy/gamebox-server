@@ -6,5 +6,9 @@ git config pull.ff only
 git pull --force
 popd
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 /opt/landing.jpg
-/usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app
+/usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
+while true
+do sleep 60
+git pull --force
+done
 exit 0
