@@ -11,5 +11,5 @@ echo Made it to main loop
 while true
 do sleep 30
 echo "Check for updates..."
-git pull --force | grep forward && halt -r
+git pull --force | grep forward && reboot 
 done
