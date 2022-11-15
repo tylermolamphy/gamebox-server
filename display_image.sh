@@ -12,6 +12,7 @@ fi
 if [ "${upMins}" -lt "1" ]
 then
     sleep 30
+    /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 /opt/landing.jpg
 fi
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 $1
 exit 0
