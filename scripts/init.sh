@@ -8,5 +8,7 @@ git pull --force
 popd
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 /opt/landing.jpg
 /usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
-inotifywait -m /opt/gamebox-server/ -e create -e modify -e moved_to || halt --reboot
+while inotifywait -mre create,delete,modify /opt/gamebox-server/ ;do
+    halt --reboot
+done
 exit 0
