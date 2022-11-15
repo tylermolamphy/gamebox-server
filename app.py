@@ -24,22 +24,15 @@ def index():
 @app.route('/',  methods=("POST", "GET"))
 def uploadFile():
     if request.method == 'POST':
-        # Upload file flask
         uploaded_img = request.files['uploaded-file']
-        # Extracting uploaded data file name
         img_filename = secure_filename(uploaded_img.filename)
-        # Upload file to database (defined uploaded folder in static path)
         uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
-        # And displaying image
         subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh'], shell=True)
-        # Finally, return to user
         return render_template('success.html')
  
 @app.route('/reset_image')
 def resetImage():
-    # Retrieving uploaded file path from session
     subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh /opt/landing.jpg'], shell=True)
-    # Display image in Flask application web page
     return render_template('success.html')
  
 @app.route('/reboot')
