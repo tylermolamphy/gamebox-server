@@ -10,5 +10,5 @@ popd
 while true
 do sleep 30
 echo "Check for updates..."
-git pull --force | grep "Fast-forward" || reboot
+git pull --force | grep "Fast-forward" || halt -r
 done
