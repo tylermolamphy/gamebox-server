@@ -19,7 +19,7 @@ def index():
        'title' : 'gamebox',
        'time': timeString
        }
-    return render_template('main.html', **templateData)
+    return render_template('index.html', **templateData)
  
 @app.route('/',  methods=("POST", "GET"))
 def uploadFile():
