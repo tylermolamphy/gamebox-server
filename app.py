@@ -46,10 +46,15 @@ def resetImage():
     # Display image in Flask application web page
     return render_template('success.html')
  
+@app.route('/service_restart')
+def restartSystem():
+    subprocess.run(['/usr/bin/bash /usr/bin/sudo /usr/bin/systemctl restart flask'], shell=True)
+    return render_template('wait.html')
+ 
 @app.route('/reboot')
 def restartSystem():
     subprocess.run(['/usr/bin/bash /usr/bin/sudo /sbin/reboot'], shell=True)
-    return render_template('done.html')
+    return render_template('wait.html')
 
 @app.route('/power_down')
 def powerDown():
