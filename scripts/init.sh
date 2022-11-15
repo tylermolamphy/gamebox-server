@@ -12,5 +12,4 @@ inotifywait -m /opt/gamebox-server -e create -e modify -e moved_to |
         sleep 5
         /usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
     done
-
 exit 0
