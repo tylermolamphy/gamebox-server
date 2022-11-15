@@ -37,12 +37,12 @@ def resetImage():
  
 @app.route('/reboot')
 def restartSystem():
-    subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/halt.sh r'], shell=True)
+    subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/halt.sh -r'], shell=True)
     return render_template('done.html')
 
 @app.route('/power_down')
 def powerDown():
-    subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/halt.sh s'], shell=True)
+    subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/halt.sh'], shell=True)
     return render_template('done.html')
  
 if __name__=='__main__':
