@@ -14,5 +14,5 @@ then
     sleep 30
     /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 /opt/landing.jpg
 fi
-/usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 $1
+/usr/bin/sudo /usr/bin/fbi -a --fitwidth --noverbose -T 1 $1
 exit 0
