@@ -28,17 +28,19 @@ def uploadFile():
         img_filename = secure_filename(uploaded_img.filename)
         uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
         subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh'], shell=True)
-        return render_template('success.html')
+        templateData ={'task' : 'set image'}
+        return render_template('success.html', **templateData)
  
 @app.route('/reset_image')
 def resetImage():
     subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh /opt/landing.jpg'], shell=True)
-    return render_template('success.html')
+    return render_template('success.html', **templateData)
  
 @app.route('/reboot')
 def restartSystem():
     subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/halt.sh -r'], shell=True)
-    return render_template('done.html')
+    templateData ={'task' : 'restarted the system'}
+    return render_template('success.html', **templateData)
 
 @app.route('/power_down')
 def powerDown():
