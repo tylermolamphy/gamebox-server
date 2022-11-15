@@ -31,14 +31,14 @@ def uploadFile():
         # Upload file to database (defined uploaded folder in static path)
         uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
         # And displaying image
-        subprocess.run(['/usr/bin/bash /opt/display_image.sh'], shell=True)
+        subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh'], shell=True)
         # Finally, return to user
         return render_template('success.html')
  
 @app.route('/reset_image')
 def resetImage():
     # Retrieving uploaded file path from session
-    subprocess.run(['/usr/bin/bash /opt/display_image.sh /opt/landing.jpg'], shell=True)
+    subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh /opt/landing.jpg'], shell=True)
     # Display image in Flask application web page
     return render_template('success.html')
  
