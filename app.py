@@ -10,15 +10,11 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, template_folder='templateFiles', static_folder='staticFiles')
 app.config['UPLOAD_FOLDER'] = '/opt/uploaded_images/'
- 
-app = Flask(__name__)
-app.config['SESSION_TYPE'] = 'memcached'
-app.config['SECRET_KEY'] = 'c41FRlse6dhmD2zr52kdfTDAgtNejXjKDoQyCUiHXo7YeR'
- 
+
 @app.route('/')
 def index():
     now = datetime.datetime.now()
-    timeString = now.strftime("%Y-%m-%d %H:%M")
+    timeString = now.strftime("%I:%M %p")
     templateData = {
        'title' : 'gamebox',
        'time': timeString
