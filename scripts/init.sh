@@ -8,7 +8,8 @@ popd
 /usr/bin/sudo /usr/bin/fbi -a --noverbose -T 1 /opt/landing.jpg
 /usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
 while true
-do sleep 60
+do sleep 30
+echo "Check for updates..."
 git pull --force
 done
 exit 0
