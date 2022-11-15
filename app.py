@@ -18,11 +18,11 @@ app.config['SECRET_KEY'] = 'c41FRlse6dhmD2zr52kdfTDAgtNejXjKDoQyCUiHXo7YeR'
 @app.route('/')
 def index():
     now = datetime.datetime.now()
-    timeString = now.strftime("%Y-%m-%d %H:%M")
+    timeString = now.strftime("%H:%M")
     templateData = {
        'title' : 'HELLO!',
        'time': timeString
-       }
+    }
     return render_template('main.html', **templateData)
  
 @app.route('/',  methods=("POST", "GET"))
@@ -47,7 +47,7 @@ def resetImage():
     return render_template('success.html')
  
 @app.route('/service_restart')
-def restartSystem():
+def restartService():
     subprocess.run(['/usr/bin/bash /usr/bin/sudo /usr/bin/systemctl restart flask'], shell=True)
     return render_template('wait.html')
  
