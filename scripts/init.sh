@@ -10,6 +10,6 @@ popd
 while true
 do sleep 30
 echo "Check for updates..."
-git pull --force
+git pull --force | grep "Fast-forward" || reboot
 done
 exit 0
