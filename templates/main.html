@@ -79,7 +79,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarsExample09">
+                <!--<div class="collapse navbar-collapse" id="navbarsExample09">-->
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Set Image</a>
@@ -99,37 +101,28 @@
                             <a class="nav-link" href="/edit" target="_blank">Backend</a>
                         </li>
                     </ul>
-                    <p>{{ time }}, {{ uptime }}</p>
+                    <p class="text-bg-dark">{{ time }}, {{ uptime }}</p>
                 </div>
             </div>
         </nav>
 
         <main>
-            <center>
-                <h3>An image set here will be displayed on the scren.</h3>
-                <p class="fs-5 col-md-8">Image must be 1920x1080 or relatively close.</p>
-            </center>
             <div class="row g-5">
                 <div class="col-md-6">
-                    <h4>From file</h4>
+                    <h4>Upload an image to display:</h4>
                     <form method="POST" enctype="multipart/form-data" action="/">
                         <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
                         <input type="submit" value="Submit" class="btn btn-primary btn-lg px-4">
                     </form>
                 </div>
-
-                <div class="col-md-6">
-                    <h4>From URL</h4>
-                    <form method="POST" enctype="text/plain" action="/">
-                        <textarea name="textbox"></textarea>
-                        <input type="submit" value="Submit" class="btn btn-primary btn-lg px-4">
-                    </form>
-                </div>
             </div>
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+              <span class="text-muted">Created with ❤️ by Tyler <a href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">View Source</a>
+              </span>
+            </div>
+          </footer>
         </main>
-        <footer class="pt-5 my-5 text-muted border-top">
-            Created with ❤️ by Tyler <a href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">View Source</a>
-        </footer>
     </div>
 </body>
 

@@ -18,11 +18,11 @@ app.config['SECRET_KEY'] = 'c41FRlse6dhmD2zr52kdfTDAgtNejXjKDoQyCUiHXo7YeR'
 @app.route('/')
 def index():
     now = datetime.datetime.now()
-    timeString = now.strftime("%H:%M")
+    timeString = now.strftime("%Y-%m-%d %H:%M")
     templateData = {
-       'title' : 'HELLO!',
+       'title' : 'gamebox',
        'time': timeString
-    }
+       }
     return render_template('main.html', **templateData)
  
 @app.route('/',  methods=("POST", "GET"))
@@ -46,15 +46,10 @@ def resetImage():
     # Display image in Flask application web page
     return render_template('success.html')
  
-@app.route('/service_restart')
-def restartService():
-    subprocess.run(['/usr/bin/bash /usr/bin/sudo /usr/bin/systemctl restart flask'], shell=True)
-    return render_template('wait.html')
- 
 @app.route('/reboot')
 def restartSystem():
     subprocess.run(['/usr/bin/bash /usr/bin/sudo /sbin/reboot'], shell=True)
-    return render_template('wait.html')
+    return render_template('done.html')
 
 @app.route('/power_down')
 def powerDown():
