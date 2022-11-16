@@ -31,7 +31,7 @@ def uploadFile():
         subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh'], shell=True)
         templateData ={
             'task' : 'set image',
-            'current' : os.path.join('/opt/uploaded_images/', img_filename))
+            'current' : os.path.join('/opt/uploaded_images/', img_filename)
         }
         return render_template('success.html', **templateData)
  
