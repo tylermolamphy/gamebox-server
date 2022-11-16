@@ -66,12 +66,6 @@
         }
     </style>
 
-    <script>
-        $(document).on('change', '.file-input', function() {
-            document.getElementById("upload").submit();
-        });
-    </script>
-
 </head>
 
 <body class="bg-dark">
@@ -95,11 +89,10 @@
                 <div class="col-md-6">
                     <div class="h-100 p-5 rounded-3">
                         <h4>Upload image:</h4>
-                        <div class="file-drop-area">
-                            <span class="choose-file-button">Choose an image</span>
-                            <span class="file-message">or drag and drop one here</span>
-                            <input class="file-input" name="upload" type="file" id="myFile" accept=".jpg">
-                        </div>
+                        <form method="POST" enctype="multipart/form-data" action="/">
+                            <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
+                            <input type="submit" value="Submit" class="btn btn-primary btn-lg px-4">
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6">
