@@ -16,9 +16,13 @@ img_filename = 'landing.jpg'
 def index():
     now = datetime.datetime.now()
     timeString = now.strftime("%I:%M %p")
+    path = '/var/tmp/systemstate.lock'
+    with open(path, encoding='utf-8') as data:
+        stats=data.read()
     templateData = {
        'title' : 'gamebox',
-       'time': timeString
+       'time' : timeString,
+       'statline' : stats
        }
     return render_template('index.html', **templateData)
  
@@ -35,12 +39,6 @@ def uploadFile():
         }
         return render_template('success.html', **templateData)
 
-@app.route('/stats', methods=['GET'])
-def getStats(action):
-    path = '/opt/statfile'
-    with open(path, encoding='utf-8') as data:
-        return logview(logdata=data.read())
- 
 @app.route('/reset_image')
 def resetImage():
     subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh /opt/landing.jpg'], shell=True)
