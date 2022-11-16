@@ -20,7 +20,68 @@
             position: fixed;
             bottom: 0;
         }
+
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 450px;
+            max-width: 100%;
+            padding: 25px;
+            border: 1px dashed rgba(255, 255, 255, 0.4);
+            border-radius: 3px;
+            transition: 0.2s;
+
+        }
+
+        .choose-file-button {
+            flex-shrink: 0;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            padding: 8px 15px;
+            margin-right: 10px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .file-message {
+            font-size: small;
+            font-weight: 300;
+            line-height: 1.4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .file-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            opacity: 0;
+
+        }
     </style>
+
+    <script>
+        $(document).on('change', '.file-input', function() {
+
+
+            var filesCount = $(this)[0].files.length;
+
+            var textbox = $(this).prev();
+
+            if (filesCount === 1) {
+                var fileName = $(this).val().split('\\').pop();
+                textbox.text(fileName);
+            } else {
+                textbox.text(filesCount + ' files selected');
+            }
+        });
+    </script>
 
 </head>
 
@@ -34,10 +95,10 @@
             </header>
 
             <div class="p-4 mb-4 bg-dark text-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Currently on display</h1>
-                    <p class="col-md-8 fs-4">Image here</p>
-                    <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                <h1 class="display-5 fw-bold">Currently on display</h1>
+                <div class="container-fluid py-5 border">
+                    <p>{{ current }}</p>
+                    <img src="/opt/uploaded_images/{{ current }}">
                 </div>
             </div>
 
