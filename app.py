@@ -16,7 +16,7 @@ img_filename = 'landing.jpg'
 def index():
     now = datetime.datetime.now()
     timeString = now.strftime("%I:%M %p")
-    path = '/var/tmp/systemstate.lock'
+    path = '/var/log/systemstate.lock'
     with open(path, encoding='utf-8') as data:
         stats=data.read()
     templateData = {
