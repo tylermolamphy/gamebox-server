@@ -100,52 +100,41 @@
 
             </div>
 
-            <div class="row align-items-md-stretch">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 rounded-3">
-                        <h4>Upload image:</h4>
-                        <form method="POST" enctype="multipart/form-data" action="/">
-                            <input type="file" id="myFile" name="uploaded-file" class="custom-file-input" accept=".jpg">
-                            <label class="custom-file-label" for="customFile">Choose an image</label>
-                            <input type="submit" value="Submit" class="btn btn-success btn-lg px-4">
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-dark rounded-3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="column">
-                                    <a href="/recall_image" class="btn btn-primary btn-sm px-4" role="button">Recall image</a>
-                                </div>
-                                <div class="column">
-
-                                    <a href="/reset_image" class="btn btn-secondary btn-sm px-4" role="button">Reset image</a>
-                                </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-dark rounded-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="column">
+                                <a href="/recall_image" class="btn btn-primary btn-sm px-4" role="button">Recall image</a>
                             </div>
-                            <div class="row">
+                            <div class="column">
 
-                                <div class="column">
+                                <a href="/reset_image" class="btn btn-secondary btn-sm px-4" role="button">Reset image</a>
+                            </div>
+                        </div>
+                        <div class="row">
 
-                                    <a href="/reboot" class="btn btn-warning btn-sm px-4" role="button">Restart</a>
-                                </div>
-                                <div class="column">
+                            <div class="column">
 
-                                    <a href="/power_down" class="btn btn-danger btn-sm px-4" role="button">Power Off</a>
-                                </div>
+                                <a href="/reboot" class="btn btn-warning btn-sm px-4" role="button">Restart</a>
+                            </div>
+                            <div class="column">
+
+                                <a href="/power_down" class="btn btn-danger btn-sm px-4" role="button">Power Off</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="footer">
-                <footer class="footer mt-auto py-3 bg-dark">
-                    <div class="container">
-                        <span class="text-muted">Created with ❤️ by Tyler. Build {{ commit }}</span>
-                    </div>
-            </div>
-            </footer>
+        <div class="footer">
+            <footer class="footer mt-auto py-3 bg-dark">
+                <div class="container">
+                    <span class="text-muted">Created with ❤️ by Tyler. Build {{ commit }}</span>
+                </div>
+        </div>
+        </footer>
         </div>
     </main>
 </body>
