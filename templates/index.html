@@ -65,10 +65,10 @@
         }
     </style>
 
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="static/sticky-footer.css" rel="stylesheet">
 </head>
 
-<body class="d-flex text-bg-dark">
+<body class="d-flex flex-column h-100 text-bg-dark">
 
     <div class="col-lg-8 mx-auto p-4 py-md-5">
         <nav class="navbar navbar-expand-lg bg-light rounded" aria-label="Eleventh navbar example">
@@ -100,27 +100,32 @@
             </div>
         </nav>
 
-        <main>
-            <center>
-                <div class="row g-5">
-                    <div class="col-md-24">
-                        <h4>Upload an image to display:</h4>
-                        <form method="POST" enctype="multipart/form-data" action="/">
-                            <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
-                            <input type="submit" value="Submit" class="btn btn-primary btn-sm px-4">
-                        </form>
-                        <a class="text" href="/reset_image">Reset image</a>
+        <main class="flex-shrink-0">
+            <div class="container">
+                <center>
+                    <div class="row g-5">
+                        <div class="col-md-24">
+                            <h4>Upload an image to display:</h4>
+                            <form method="POST" enctype="multipart/form-data" action="/">
+                                <input type="file" id="myFile" name="uploaded-file" accept=".jpg">
+                                <input type="submit" value="Submit" class="btn btn-primary btn-sm px-4">
+                            </form>
+                            <a class="text" href="/reset_image">Reset image</a>
+                        </div>
                     </div>
-                </div>
-                <footer class="footer mt-auto py-3 bg-dark">
-                    <div class="container">
-                        <span class="text-muted">Created with ❤️ by Tyler <a href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">View Source</a>
-                        </span>
-                    </div>
-                </footer>
+                </center>
+            </div>
         </main>
-        </center>
     </div>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container">
+            <center>
+                <span class="text-muted">Created with ❤️ by Tyler <a href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">View Source</a>
+                </span>
+            </center>
+        </div>
+    </footer>
+
 </body>
 
 </html>
