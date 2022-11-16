@@ -46,22 +46,10 @@
             fill: currentColor;
         }
 
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
 
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
+        .footer {
+            position: fixed;
+            bottom: 0;
         }
     </style>
 
@@ -92,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/status" target="_blank">Status</a>
+                            <a class="nav-link" href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">Source</a>
                         </li>
                     </ul>
                     <p class="text-bg-dark">{{ time }}</p>
@@ -117,13 +105,14 @@
             </div>
         </main>
     </div>
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container">
-            <center>
-                <span class="text-muted">Created with ❤️ by Tyler <a href="https://github.com/tylermolamphy/gamebox-server/blob/main/app.py" target="_blank">View Source</a>
-                </span>
-            </center>
-        </div>
+    <div class="footer">
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <center>
+                    <span class="text-muted">Created with ❤️ by Tyler</span>
+                </center>
+            </div>
+    </div>
     </footer>
 
 </body>
