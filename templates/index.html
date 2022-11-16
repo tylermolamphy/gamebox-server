@@ -45,10 +45,11 @@
                 <div class="col-md-6">
                     <div class="h-100 p-5 rounded-3">
                         <h4>Upload image:</h4>
-                        <form method="POST" enctype="multipart/form-data" action="/">
-                            <input type="file" class="form-control" id="myFile" name="uploaded-file" accept=".jpg">
-                            <input type="submit" value="Submit" class="btn btn-secondary btn-sm px-4">
-                        </form>
+                        <div class="file-drop-area">
+                            <span class="choose-file-button">Choose an image</span>
+                            <span class="file-message">or drag and drop one here</span>
+                            <input class="file-input" type="file" id="myFile" accept=".jpg">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
