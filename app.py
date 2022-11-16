@@ -34,6 +34,7 @@ def uploadFile():
 @app.route('/reset_image')
 def resetImage():
     subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh /opt/landing.jpg'], shell=True)
+    templateData ={'task' : 'cleared the image'}
     return render_template('success.html', **templateData)
  
 @app.route('/reboot')
