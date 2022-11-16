@@ -34,6 +34,12 @@ def uploadFile():
             'current' : os.path.join('/opt/uploaded_images/', img_filename)
         }
         return render_template('success.html', **templateData)
+
+@app.route('/stats', methods=['GET'])
+def getStats(action):
+    path = '/opt/statfile'
+    with open(path, encoding='utf-8') as data:
+        return logview(logdata=data.read())
  
 @app.route('/reset_image')
 def resetImage():
