@@ -9,5 +9,5 @@ popd
 /usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
 while true
 do sleep 30
-git pull --force | grep Updating && pkill gunicorn && /usr/local/bin/gunicorn -w 2 --bind unix:/tmp/gamebox-ipc.sock wsgi:app &disown
+git pull --force | grep Updating && /sbin/reboot
 done
