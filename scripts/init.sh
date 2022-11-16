@@ -2,8 +2,9 @@
 date
 whoami
 updatestatline() {
-uptime --pretty > /var/log/systemstate.lock
-/usr/bin/vcgencmd measure_temp | awk -F "[=']" {'print ", internal temp " $2 " °F"'} >> /var/log/systemstate.lock
+uptime --pretty > /var/log/systemuptime.log
+/usr/bin/vcgencmd measure_temp | awk -F "[=']" {'print "SOC temp " $2 " °C"'} > /var/log/systemtemp.log
+git rev-parse --short HEAD > /var/log/gameboxcommit.log
 }
 pushd /opt/gamebox-server
 git config pull.ff only
