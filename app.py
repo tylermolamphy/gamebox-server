@@ -26,7 +26,7 @@ def index():
     with open(path3, encoding='utf-8') as data:
         versionString=data.read()
     templateData = {
-       'title' : 'gamebox',
+       'title' : 'gamebox control panel',
        'time' : timeString,
        'uptime' : uptimeString,
        'temp' : tempString,
