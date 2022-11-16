@@ -25,12 +25,16 @@ def index():
     path3 = '/var/log/gameboxcommit.log'
     with open(path3, encoding='utf-8') as data:
         versionString=data.read()
+    path4 = '/var/log/spaceused.log'
+    with open(path4, encoding='utf-8') as data:
+        capacityString=data.read()
     templateData = {
        'title' : 'gamebox control panel',
        'time' : timeString,
        'uptime' : uptimeString,
        'temp' : tempString,
-       'commit' : versionString
+       'commit' : versionString,
+       'free' : capacityString
        }
     return render_template('index.html', **templateData)
  
