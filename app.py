@@ -28,7 +28,10 @@ def uploadFile():
         img_filename = secure_filename(uploaded_img.filename)
         uploaded_img.save(os.path.join('/opt/uploaded_images/', img_filename))
         subprocess.run(['/usr/bin/bash /opt/gamebox-server/scripts/display_image.sh'], shell=True)
-        templateData ={'task' : 'set image'}
+        templateData ={
+            'task' : 'set image',
+            'current' : uploaded_img.img_filename
+        }
         return render_template('success.html', **templateData)
  
 @app.route('/reset_image')
