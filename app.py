@@ -16,13 +16,21 @@ img_filename = 'landing.jpg'
 def index():
     now = datetime.datetime.now()
     timeString = now.strftime("%I:%M %p")
-    path = '/var/log/systemstate.lock'
-    with open(path, encoding='utf-8') as data:
-        stats=data.read()
+    path1 = '/var/log/systemuptime.log'
+    with open(path1, encoding='utf-8') as data:
+        uptimeString=data.read()
+    path2 = '/var/log/systemtemp.log'
+    with open(path2, encoding='utf-8') as data:
+        tempString=data.read()
+    path3 = '/var/log/gameboxcommit.log'
+    with open(path3, encoding='utf-8') as data:
+        uptimeString=data.read()
     templateData = {
        'title' : 'gamebox',
        'time' : timeString,
-       'statline' : stats
+       'uptime' : uptimeString,
+       'temp' : tempString,
+       'commit' : versionString
        }
     return render_template('index.html', **templateData)
  
