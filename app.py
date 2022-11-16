@@ -24,7 +24,7 @@ def index():
         tempString=data.read()
     path3 = '/var/log/gameboxcommit.log'
     with open(path3, encoding='utf-8') as data:
-        uptimeString=data.read()
+        versionString=data.read()
     templateData = {
        'title' : 'gamebox',
        'time' : timeString,
