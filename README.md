@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src="d20.svg" height="350px"/>
+<img src="https://github.com/tylermolamphy/gamebox-server/raw/main/d20.png" height="350px"/>
 
 ## gamebox-server
 </div>
