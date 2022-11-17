@@ -1,7 +1,7 @@
 #!/bin/bash
 apt update
 apt upgrade -y
-apt install fbi libjpeg-dev python3-pip glances -y
+apt install build-essential cmake fbi libjpeg-dev python3-pip glances -y
 pip3 install flask gunicorn bottle
 pushd /opt/
 git clone https://github.com/libjpeg-turbo/libjpeg-turbo.git
