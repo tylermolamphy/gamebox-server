@@ -2,7 +2,7 @@
 
 We use this to display our combat maps during our dungeons and dragons campaign. You could use it to display whatever image you'd like through the HDMI port on the Pi without running X.org or Wayland.
 
-gamebox-server is written in Python using [Flask](https://pythonbasics.org/what-is-flask-python/), and served by [Gunicorn]https://gunicorn.org/ behind [nginx](http://nginx.org/en/).
+gamebox-server is written in Python using [Flask](https://pythonbasics.org/what-is-flask-python/), and served by [Gunicorn](https://gunicorn.org/) behind [nginx](http://nginx.org/en/).
 
 I run this on [DietPi](https://dietpi.com/docs/) but [Raspbian](https://www.raspberrypi.com/software/operating-systems/) should work fine.
 
