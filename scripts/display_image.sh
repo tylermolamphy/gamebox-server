@@ -1,7 +1,4 @@
 #!/bin/bash
-/usr/bin/clear
-upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
-upMins=$((${upSeconds} / 60))
 if [ $# -eq 0 ]
   then
     /usr/bin/sudo /usr/bin/killall /usr/bin/fbi
