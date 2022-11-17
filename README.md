@@ -1,7 +1,7 @@
 
 <div align="center">
 <img src="https://github.com/tylermolamphy/gamebox-server/raw/main/d20.png" height="350px"/>
-</div>
+</div><br><br>
 
 #### gamebox-server is a homebaked web controller for displaying an image on a Raspberry Pi
 
