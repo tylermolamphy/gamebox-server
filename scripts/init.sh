@@ -9,25 +9,25 @@ temp=`/usr/bin/vcgencmd measure_temp | awk -F "[=']" {'print $2'} | cut -c 1-2`
 temp_f=`echo "scale=4; $temp*1.8 + 32" | bc`
 if (( $temp >= 70 ))
 then
-    temp=$temp °C / $temp_f °F: Warning, potential for damage at this temperature!"
+    temp="$temp °C / $temp_f °F: Warning, potential for damage at this temperature!"
 
 elif (( $temp >= 60 ))
 then
-    temp=$temp °C / $temp_f °F: Running hot, something is wrong"
+    temp="$temp °C / $temp_f °F: Running hot, something is wrong"
 
 elif (( $temp >= 50 ))
 then
-    temp=$temp °C / $temp_f °F (warm)"
+    temp="$temp °C / $temp_f °F (warm)"
 
 elif (( $temp >= 40 ))
 then
-    temp=$temp °C / $temp_f °F"
+    temp="$temp °C / $temp_f °F"
 
 elif (( $temp >= 30 ))
 then
-    temp="info">$temp °C / $temp_f °F: Suspiciously cool?"
+    temp="$temp °C / $temp_f °F: Suspiciously cool?"
 else
-    temp=OUT OF RANGE: $temp °C / $temp_f °F: Something is very, very wrong"
+    temp="OUT OF RANGE: $temp °C / $temp_f °F: Something is very, very wrong"
 fi
 echo $temp > /var/log/systemtemp.log
 }
