@@ -1,11 +1,9 @@
 
 <div align="center">
 <img src="https://github.com/tylermolamphy/gamebox-server/raw/main/d20.png" height="350px"/>
-
-## gamebox-server
 </div>
 
-### A crude, opinionated image display controller for the Raspberry Pi
+### gamebox-server is a crude, opinionated image display controller for the Raspberry Pi
 
 gamebox-server is written in Python using [Flask](https://github.com/pallets/flask/#readme). It uses [fbi](https://www.kraxel.org/blog/linux/fbida/) to display your image on the host's framebuffer console.
 
