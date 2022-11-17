@@ -6,28 +6,27 @@ uptime --pretty > /var/log/systemuptime.log
 git rev-parse --short HEAD > /var/log/gameboxcommit.log
 df -h  | grep \/root | awk {'print $5'} > /var/log/spaceused.log
 temp=`/usr/bin/vcgencmd measure_temp | awk -F "[=']" {'print $2'} | cut -c 1-2`
-temp_f=`echo "scale=4; $temp*1.8 + 32" | bc`
 if (( $temp >= 70 ))
 then
-    temp="$temp °C / $temp_f °F: Warning, potential for damage at this temperature!"
+    temp="$temp°C: Warning, potential for damage at this temperature!"
 
 elif (( $temp >= 60 ))
 then
-    temp="$temp °C / $temp_f °F: Running hot, something is wrong"
+    temp="$temp°C: Running hot, something is wrong"
 
 elif (( $temp >= 50 ))
 then
-    temp="$temp °C / $temp_f °F (warm)"
+    temp="$temp°C (warm)"
 
 elif (( $temp >= 40 ))
 then
-    temp="$temp °C / $temp_f °F"
+    temp="$temp°C"
 
 elif (( $temp >= 30 ))
 then
-    temp="$temp °C / $temp_f °F: Suspiciously cool?"
+    temp="$temp°C: Suspiciously cool?"
 else
-    temp="OUT OF RANGE: $temp °C / $temp_f °F: Something is very, very wrong"
+    temp="OUT OF RANGE: $temp°C: Something is very, very wrong"
 fi
 echo $temp > /var/log/systemtemp.log
 }
