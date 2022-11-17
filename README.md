@@ -9,6 +9,8 @@ I cobbled this together in Python using [Flask](https://github.com/pallets/flask
 
 We use this to display our combat maps during our dungeons and dragons campaign. You could use it to display whatever image you'd like through the HDMI port on the Pi without running X.org or Wayland.
 
-I host this on a Pi 3B+ with [Gunicorn](https://gunicorn.org/) behind [nginx](https://nginx.org/en/) on [DietPi](https://dietpi.com/docs/). If you want to as well, clone this repository to /opt and run:
+I host this on a Pi 3B+ with [Gunicorn](https://gunicorn.org/) behind [nginx](https://nginx.org/en/) on [DietPi](https://dietpi.com/docs/).
+
+If you want to as well, clone this repository to /opt and run:
 
 `bash scripts/bootstrap.sh`
