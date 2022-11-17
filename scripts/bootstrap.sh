@@ -2,7 +2,7 @@
 set -e
 apt update
 apt upgrade -y
-apt install build-essential cmake git python3-pip nginx fbi bc libjpeg-dev glances -y
+apt install build-essential cmake git python3-pip nginx fbi bc libjpeg-dev glances avahi-daemon -y
 pip3 install flask gunicorn bottle
 pushd /opt/
 git clone https://github.com/libjpeg-turbo/libjpeg-turbo.git
