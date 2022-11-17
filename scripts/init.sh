@@ -10,15 +10,15 @@ if (( $temp >= 70 ))
 then
     temp="$temp°C: Warning, potential for damage at this temperature!"
 
-elif (( $temp >= 60 ))
+elif (( $temp >= 65 ))
 then
     temp="$temp°C: Running hot, something is wrong"
 
-elif (( $temp >= 50 ))
+elif (( $temp >= 60 ))
 then
     temp="$temp°C (warm)"
 
-elif (( $temp >= 40 ))
+elif (( $temp >= 50 ))
 then
     temp="$temp°C"
 
