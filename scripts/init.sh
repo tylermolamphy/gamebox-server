@@ -18,11 +18,11 @@ elif (( $temp >= 60 ))
 then
     temp="$temp°C (warm)"
 
-elif (( $temp >= 50 ))
+elif (( $temp >=25 ))
 then
     temp="$temp°C"
 
-elif (( $temp >= 20 ))
+elif (( $temp >= 1 ))
 then
     temp="$temp°C: Suspiciously cool?"
 else
