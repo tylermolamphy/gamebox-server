@@ -7,8 +7,7 @@ pip3 install flask gunicorn bottle
 pushd /opt/
 git clone https://github.com/libjpeg-turbo/libjpeg-turbo.git
 pushd /opt/libjpeg-turbo
-make && make deb
-dpkg -i `ls libjpeg-turbo*.deb`
+make && make deb && dpkg -i `ls libjpeg-turbo*.deb`
 echo sleep 5 > /var/lib/dietpi/dietpi-autostart/custom.sh
 echo cd /opt/gamebox-server >> /var/lib/dietpi/dietpi-autostart/custom.sh
 echo /opt/gamebox-server/scripts/init.sh >> /var/lib/dietpi/dietpi-autostart/custom.sh
