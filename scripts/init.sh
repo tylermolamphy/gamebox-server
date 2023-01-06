@@ -22,7 +22,7 @@ elif (( $temp >=25 ))
 then
     temp="$temp°C"
 
-elif (( $temp >= 1 ))
+elif (( $temp >= 10 ))
 then
     temp="$temp°C: Suspiciously cool?"
 else
